@@ -73,6 +73,11 @@ export const datasetAPI = {
   getColumns: (datasetUrl: string) =>
     api.get(`/datasets/columns`, { params: { dataset_url: datasetUrl } }),
 
+  getObservations: (datasetUrl: string, limit: number = 100, offset: number = 0) =>
+    api.get(`/datasets/observations`, { 
+      params: { dataset_url: datasetUrl, limit, offset } 
+    }),
+
   deleteDataset: (datasetUrl: string) =>
     api.delete(`/datasets`, { params: { dataset_url: datasetUrl } }),
 };
