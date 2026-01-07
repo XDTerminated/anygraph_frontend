@@ -541,7 +541,7 @@ export default function ChatPage() {
                           components={{
                             img: ({ node, src, alt, ...props }) => {
                               // In newer react-markdown, src might be in node.properties
-                              const actualSrc = src || node?.properties?.src;
+                              const actualSrc = String(src || node?.properties?.src || '');
                               console.log('Image component called');
                               console.log('src prop:', src);
                               console.log('node.properties:', node?.properties);
